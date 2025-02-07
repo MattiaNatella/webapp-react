@@ -1,0 +1,17 @@
+@font-face {
+    font-family: "FF";
+    src: url("./assets/fonts/finalf.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "LOTR";
+    src: url("./assets/fonts/MorrisRoman-Black.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: "LOTR";
+}
