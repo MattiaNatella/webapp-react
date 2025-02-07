@@ -1,5 +1,5 @@
 @font-face {
-    font-family: "FF";
+    font-family: "Final Fantasy";
     src: url("./assets/fonts/finalf.ttf");
     font-weight: normal;
     font-style: normal;
@@ -12,6 +12,31 @@
     font-style: normal;
 }
 
-* {
-    font-family: "LOTR";
+@font-face {
+    font-family: "HP";
+    src: url("./assets/fonts/ParryHotter.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ROCK";
+    src: url("./assets/fonts/RockAwayDemoRegular.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "BALLERICK";
+    src: url("./assets/fonts/Ballerick.ttf.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+header {
+    font-family: "ROCK";
+}
+
+main {
+    font-family: "BALLERICK";
 }
