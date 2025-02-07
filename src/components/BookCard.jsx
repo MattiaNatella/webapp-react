@@ -1,16 +1,21 @@
 
-const BookCard = () => {
+const BookCard = (props) => {
+
+    console.log(props)
+
+    const { id, title, director, genre, release_year, image, abstract } = props.movieData
+
     return (
-        <div className="col">
+        <div className="col my-1">
             <div className="card">
-                <img src="..." className="card-img-top" alt="..." />
+                <img src={image} className="card-img-top book-image" alt={title} />
                 <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
+                    <h5 className="card-title">{title}</h5>
+                    <p className="card-text">{abstract}</p>
+                    <a href="#" className="btn btn-primary">Leggi le recensioni</a>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 
