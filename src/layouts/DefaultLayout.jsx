@@ -5,7 +5,7 @@ const DefaultLayout = () => {
     return (
         <>
             <header><NavBar /></header>
-            <main className="container d-flex justify-content-center my-5"><Outlet /></main>
+            <main className="container my-5"><Outlet /></main>
         </>
 
     )
