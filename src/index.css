@@ -41,12 +41,16 @@ main {
     font-family: "BALLERICK";
 }
 
+.card {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.poster-detail {
+    width: 100%;
+}
+
 .book-image {
     aspect-ratio: 9/16;
     width: 100%;
     object-fit: cover;
-}
-
-.card-body {
-    background-color: #CECED8;
 }

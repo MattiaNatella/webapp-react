@@ -1,6 +1,6 @@
 import { useGlobalContext } from "../context/GlobalContext"
 import { useEffect } from "react"
-import BookCard from "../components/BookCard"
+import FilmCards from "../components/FilmCards"
 
 const HomePage = () => {
 
@@ -14,7 +14,7 @@ const HomePage = () => {
             <h1 className="text-center">Lista films</h1>
             <div className="row row-cols-1 row-cols-sm-3">
                 {movies.map((movie, index) => (
-                    <BookCard key={index} movieData={movie} />
+                    <FilmCards key={index} movieData={movie} />
                 ))}
 
             </div>
