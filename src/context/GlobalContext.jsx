@@ -28,7 +28,6 @@ const GlobalProvider = ({ children }) => {
     }
 
     const getStars = (vote) => {
-        console.log("Valore passato a getStars", vote)
         return [1, 2, 3, 4, 5].map((_, i) => (<i key={i} className={`fa-star fa-${i < vote ? 'solid text-warning fa-spin' : 'regular text-danger fa-fade'}`}></i>))
     }
 

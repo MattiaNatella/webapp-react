@@ -1,29 +1,21 @@
-import React from 'react'
-import { useGlobalContext } from '../context/GlobalContext'
+import { useGlobalContext } from '../context/GlobalContext.jsx'
 
-const ReviewsCard = (props) => {
+const ReviewsCard = ({ recensione }) => {
 
-
-    const { reviews, user_vote } = props.movie
+    if (!recensione) return null;
     const { getStars } = useGlobalContext()
+    const { id, name, text, vote } = recensione;
+
     return (
-        <>
-            {reviews.map((review, index) => (
-                <div key={index} className="card my-3">
-                    <div className="card-header">Recensione dell'utente: <strong>{review.name}</strong>
+        <div className="card my-3">
+            <div className="card-header">Recensione dell'utente: {name}</div>
+            <div className="card-body">
+                <p className="card-title">{text}</p>
+                <h5 className="card-text">Voto:  {getStars(vote)}</h5>
 
-                    </div>
-                    <div className="card-body">
-                        <h5 className="card-title">Voto: {getStars(review.vote)}</h5>
-                        <p className="card-text">{review.text}</p>
-                        <p>E' stata utile?</p>
-                    </div>
-                </div>
-            ))}
+            </div>
+        </div>
+    );
+};
 
-        </>
-
-    )
-}
-
-export default ReviewsCard
+export default ReviewsCard;
