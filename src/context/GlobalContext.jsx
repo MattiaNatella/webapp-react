@@ -19,12 +19,15 @@ const GlobalProvider = ({ children }) => {
             })
     }
 
-    const fetchMovie = (id) => {
+    const fetchMovie = (id, redirect) => {
         axios.get(api_Url + id)
             .then(res => {
                 setMovie(res.data)
-            }
-            )
+            })
+            .catch(err => {
+                //reindirizzo alla pagina 404
+                if (err.status == 404) redirect();
+            })
     }
 
     const getStars = (vote) => {
