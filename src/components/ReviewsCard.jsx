@@ -5,7 +5,7 @@ const ReviewsCard = ({ recensione }) => {
 
     if (!recensione) return null;
     const { getStars } = useGlobalContext()
-    const { id, name, text, vote } = recensione;
+    const { name, text, vote } = recensione;
     const [thumbUp, setThumbUp] = useState(0)
     const [thumbDown, setThumbDown] = useState(0)
     const renderThumbUp = () => {

@@ -6,7 +6,7 @@ const SingleCard = (props) => {
     const { title, genre, release_year, abstract, image, reviews, director, average_vote } = props.movie
 
     return (
-        <div className="card mb-3">
+        <div id="single-card" className="card mb-3">
             <div className="row g-0">
                 <div className="col-md-4">
                     <img src={image} className="img-fluid rounded-start poster-detail" alt={title} />

@@ -6,7 +6,6 @@ const FilmCards = (props) => {
 
     const { id, title, director, genre, release_year, image, abstract, average_vote } = props.movieData
     const { getStars } = useGlobalContext()
-    console.log(release_year)
 
     return (
         <div className="col my-1">
