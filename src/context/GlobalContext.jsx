@@ -39,7 +39,8 @@ const GlobalProvider = ({ children }) => {
         fetchMovies,
         fetchMovie,
         movie,
-        getStars
+        getStars,
+        api_Url
     }
 
     return (

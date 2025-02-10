@@ -12,6 +12,7 @@ const FilmDetail = () => {
     const [reviewForm, setReviewForm] = useState(false)
     const redirect = useNavigate();
 
+
     const renderReviews = () => {
         if (!movie.reviews) return null;
         return movie.reviews.map((review, index) => (
@@ -36,7 +37,7 @@ const FilmDetail = () => {
             </section>
 
             <section>
-                {reviewForm && <ReviewForm setReviewForm={setReviewForm} />}
+                {reviewForm && <ReviewForm setReviewForm={setReviewForm} fetchMovie={fetchMovie} movieId={id} />}
             </section>
 
             <section>
@@ -52,7 +53,6 @@ const FilmDetail = () => {
                         </button>
                     </a>
                 </div>
-
             </section>
 
         </div>
