@@ -42,7 +42,9 @@ main {
 }
 
 .card {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 
 .poster-detail {
@@ -53,4 +55,23 @@ main {
     aspect-ratio: 9/16;
     width: 100%;
     object-fit: cover;
+}
+
+header {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    width: 100%;
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+#root {
+    margin-top: 90px;
+}
+
+i#thumb:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+
 }

@@ -13,6 +13,7 @@ const ReviewsCard = ({ recensione }) => {
         thumbDown > 0 ? setThumbDown(0) : setThumbDown(0)
 
         thumbUp > 0 ? alert('Hai già votato questa recensione!') : setThumbUp(1);
+
     }
 
     const renderThumbDown = () => {
@@ -22,21 +23,21 @@ const ReviewsCard = ({ recensione }) => {
 
     return (
         <div className="card my-3">
-            <div className="card-header">Recensione dell'utente: {name}</div>
+            <div className="card-header">Recensione dell'utente: <strong>{name}</strong> </div>
             <div className="card-body">
                 <p className="card-title">{text}</p>
                 <h5 className="card-text">Voto:  {getStars(vote)}</h5>
                 <div className="review-vote">
-                    <p>E' stata utile?</p>
-                    <i className="fa-regular fa-thumbs-up pe-1 text-success" onClick={renderThumbUp}>
+                    <p>Questa recensione è stata utile?</p>
+                    <i id="thumb" className="fa-regular fa-thumbs-up pe-1 text-success" onClick={renderThumbUp}>
                         {thumbUp}</i>
-                    <i className="fa-regular fa-thumbs-down text-danger"
+                    <i id="thumb" className="fa-regular fa-thumbs-down text-danger"
                         onClick={renderThumbDown}
                     >{thumbDown}</i>
                 </div>
 
             </div>
-        </div>
+        </div >
     );
 };
 
