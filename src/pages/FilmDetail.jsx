@@ -1,5 +1,6 @@
 import SingleCard from "../components/SingleCard";
 import ReviewsCard from "../components/ReviewsCard";
+import ReviewForm from "../components/ReviewForm";
 import { useParams, Link } from "react-router-dom";
 import { useGlobalContext } from "../context/GlobalContext";
 import { useEffect } from "react";
@@ -27,11 +28,24 @@ const FilmDetail = () => {
 
     return (
         <div className="container">
-            <h1>Dettaglio Film</h1>
-            <SingleCard movie={movie} />
-            <h2>Recensioni</h2>
-            {movie && renderReviews()}
-            <Link to='/'><button className="btn btn-primary">Torna ai film</button></Link>
+
+            <section>
+                <h1>Dettaglio Film</h1>
+                <SingleCard movie={movie} />
+            </section>
+
+            <section><ReviewForm /></section>
+
+            <section>
+                <h2>Recensioni</h2>
+                {movie && renderReviews()}
+                <div className="justify-content-between d-flex">
+                    <Link to='/'><button className="btn btn-primary ">Torna ai film</button></Link>
+                    <button className="btn btn-success">Scrivi una recensione</button>
+                </div>
+
+            </section>
+
         </div>
     );
 };

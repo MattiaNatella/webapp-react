@@ -15,7 +15,7 @@ const FilmCards = (props) => {
                 <div className="card-body">
                     <h5 className="card-title"><strong>{release_year} - {title}</strong></h5>
                     <h5 className="card-text">Voto({average_vote}):{getStars(average_vote)}</h5>
-                    <Link to={`/film-detail/${id}`} className="btn btn-primary">Leggi le recensioni</Link>
+                    <Link to={`/film-detail/${id}`} className="btn btn-primary">Dettagli film</Link>
                 </div>
             </div>
         </div >
