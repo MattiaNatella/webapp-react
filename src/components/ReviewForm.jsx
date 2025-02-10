@@ -11,6 +11,7 @@ const ReviewForm = ({ setReviewForm, fetchMovie, movieId }) => {
     }
 
     const [formData, setFormData] = useState(initialFormData)
+    const [errorFormMessage, setErrorFormMessage] = useState('')
     const { api_Url } = useGlobalContext()
 
     const handleChange = (e) => {
@@ -23,6 +24,8 @@ const ReviewForm = ({ setReviewForm, fetchMovie, movieId }) => {
     }
 
     const validation = () => {
+        if (!formData.name || !formData.vote || !formData.text) return false
+        if (isNaN(formData.vote) || formData.vote < 1 || formData.vote > 5) return false
         return true
     }
 
@@ -31,8 +34,10 @@ const ReviewForm = ({ setReviewForm, fetchMovie, movieId }) => {
         console.log(formData)
 
         if (!validation()) {
+            setErrorFormMessage('Non sono ammessi campi vuoti, verifica che Voto sia un numero compreso da 1 a 5')
             return
         }
+        setErrorFormMessage('')
         //una volta ottenuto l'oggetto con i dati del form, effettuiamo una chiamata all'API Store per inserire nel database la nuova recensione
         axios.post(api_Url + movieId + '/reviews', formData, { headers: { 'Content-Type': 'application/json' } })
             .then(res => {
@@ -61,7 +66,7 @@ const ReviewForm = ({ setReviewForm, fetchMovie, movieId }) => {
                     Aggiungi una recensione
                 </div>
                 <div className="card-body">
-                    <p className='text-danger'>Gestione errori da inserire</p>
+                    <p className='text-danger'>{errorFormMessage}</p>
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3">
                             <label className="form-label">Nome</label>
