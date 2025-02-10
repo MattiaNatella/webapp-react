@@ -22,11 +22,17 @@ const ReviewForm = ({ setReviewForm, fetchMovie, movieId }) => {
         }))
     }
 
+    const validation = () => {
+        return true
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log(formData)
 
-
+        if (!validation()) {
+            return
+        }
         //una volta ottenuto l'oggetto con i dati del form, effettuiamo una chiamata all'API Store per inserire nel database la nuova recensione
         axios.post(api_Url + movieId + '/reviews', formData, { headers: { 'Content-Type': 'application/json' } })
             .then(res => {

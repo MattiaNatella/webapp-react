@@ -23,7 +23,7 @@ const ReviewsCard = ({ recensione }) => {
 
     return (
         <div className="card my-3">
-            <div className="card-header">Recensione dell'utente: <strong>{name}</strong> </div>
+            <div className="card-header">Utente: <strong>{name}</strong> </div>
             <div className="card-body">
                 <p className="card-title">{text}</p>
                 <h5 className="card-text">Voto:  {getStars(vote)}</h5>
