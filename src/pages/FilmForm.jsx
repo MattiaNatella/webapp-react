@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { generatePath } from "react-router-dom"
+import { data, generatePath } from "react-router-dom"
 
 
 const FilmForm = () => {
@@ -37,6 +37,15 @@ const FilmForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        //creo una nuova istanza di FormData()
+        const dataToSend = new FormData()
+
+        //ciclo le chiavi di newFilm per aggiungerle in dataToSend
+        for (let key in newFilm) {
+            console.log(key, newFilm[key])
+            dataToSend.append(key, newFilm[key])
+        }
+        console.log(dataToSend)
     }
 
     return (
