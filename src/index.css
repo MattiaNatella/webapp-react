@@ -84,3 +84,7 @@ i#thumb:hover {
 html {
     scroll-behavior: smooth;
 }
+
+.thumb {
+    width: 200px;
+}
