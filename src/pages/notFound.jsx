@@ -2,7 +2,7 @@
 
 const notFound = () => {
     return (
-        <div>Film non trovato</div>
+        <div>Pagina non trovata</div>
     )
 }
 
