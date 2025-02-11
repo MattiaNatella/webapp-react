@@ -86,3 +86,8 @@ html {
 .thumb {
     width: 200px;
 }
+
+.no-reviews {
+    width: 400px;
+    object-fit: fill;
+}

@@ -3,7 +3,7 @@ import { useGlobalContext } from "../context/GlobalContext";
 const SingleCard = (props) => {
 
     const { getStars } = useGlobalContext()
-    const { title, genre, release_year, abstract, image, reviews, director, average_vote } = props.movie
+    const { title, genre, release_year, abstract, image, director, average_vote } = props.movie
 
     return (
         <div id="single-card" className="card mb-3">

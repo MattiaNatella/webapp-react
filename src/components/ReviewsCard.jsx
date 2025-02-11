@@ -22,22 +22,30 @@ const ReviewsCard = ({ recensione }) => {
     }
 
     return (
-        <div className="card my-3">
-            <div className="card-header">Utente: <strong>{name}</strong> </div>
-            <div className="card-body">
-                <p className="card-title">{text}</p>
-                <h5 className="card-text">Voto:  {getStars(vote)}</h5>
-                <div className="review-vote">
-                    <p>Questa recensione è stata utile?</p>
-                    <i id="thumb" className="fa-regular fa-thumbs-up pe-1 text-success" onClick={renderThumbUp}>
-                        {thumbUp}</i>
-                    <i id="thumb" className="fa-regular fa-thumbs-down text-danger"
-                        onClick={renderThumbDown}
-                    >{thumbDown}</i>
-                </div>
+        <>
+            {!name
+                ? (
+                    <div className="reviews d-flex flex-column ">
+                        <p>Sembra non ci siano ancora recensioni!</p>
+                        <img className="rounded mx-auto d-block no-reviews" src='/leave_review.jpg'></img>
+                    </div>)
+                : (<div className="card my-3">
+                    <div className="card-header">Utente: {name}</div>
+                    <div className="card-body">
+                        <p className="card-title">{text}</p>
+                        <h5 className="card-text">Voto:  {getStars(vote)}</h5>
+                        <div className="review-vote">
+                            <p>Questa recensione è stata utile?</p>
+                            <i id="thumb" className="fa-regular fa-thumbs-up pe-1 text-success" onClick={renderThumbUp}>
+                                {thumbUp}</i>
+                            <i id="thumb" className="fa-regular fa-thumbs-down text-danger"
+                                onClick={renderThumbDown}
+                            >{thumbDown}</i>
+                        </div>
+                    </div>
+                </div >)}
 
-            </div>
-        </div >
+        </>
     );
 };
 

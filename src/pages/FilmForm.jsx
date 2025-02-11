@@ -1,5 +1,9 @@
+import { useGlobalContext } from "../context/GlobalContext"
+import { useNavigate } from "react-router-dom"
 import { useState } from "react"
-import { data, generatePath } from "react-router-dom"
+import axios from "axios"
+import ReviewsCard from "../components/ReviewsCard"
+
 
 
 const FilmForm = () => {
@@ -10,15 +14,17 @@ const FilmForm = () => {
         release_year: '',
         director: '',
         image: null,
-        abstract: ''
+        abstract: '',
+        reviews: []
     }
 
     const [newFilm, setNewFilm] = useState(initialFilmData)
     const [imagePreview, setImagePreview] = useState('https://placehold.co/200x150')
+    const { api_Url } = useGlobalContext()
+    const navigate = useNavigate()
 
     const handleFilmChange = (e) => {
         const { name, value } = e.target
-        console.log(e.target.value)
         if (name == 'image') {
             setImagePreview(URL.createObjectURL(e.target.files[0]));
             setNewFilm(prev => ({
@@ -31,7 +37,7 @@ const FilmForm = () => {
                 [name]: value
             }))
         }
-        console.log(newFilm)
+
     }
 
     const handleSubmit = (e) => {
@@ -46,6 +52,9 @@ const FilmForm = () => {
             dataToSend.append(key, newFilm[key])
         }
         console.log(dataToSend)
+        axios.post(api_Url, dataToSend, { headers: { 'Content-Type': 'multipart/form-data' } })
+            .then(() => navigate('/'))
+            .catch((err) => console.log(err))
     }
 
     return (
