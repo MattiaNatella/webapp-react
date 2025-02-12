@@ -25,8 +25,8 @@ const ReviewsCard = ({ recensione }) => {
         <>
             {!name
                 ? (
-                    <div className="reviews d-flex flex-column ">
-                        <p>Sembra non ci siano ancora recensioni!</p>
+                    <div className="reviews mb-3">
+                        <p className='text-center fs-1'>Sembra non ci siano ancora recensioni!</p>
                         <img className="rounded mx-auto d-block no-reviews" src='/leave_review.jpg'></img>
                     </div>)
                 : (<div className="card my-3">

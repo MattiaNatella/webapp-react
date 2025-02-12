@@ -53,8 +53,8 @@ main {
 
 .book-image {
     aspect-ratio: 9/16;
-    width: 100%;
     object-fit: cover;
+
 }
 
 header {
@@ -90,4 +90,8 @@ html {
 .no-reviews {
     width: 400px;
     object-fit: fill;
+}
+
+.not-found {
+    width: 500px;
 }
